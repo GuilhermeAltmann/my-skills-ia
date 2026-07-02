@@ -21,7 +21,9 @@ my-skills/
     │   └── SKILL.md
     ├── go-architecture-patterns/   # Hexagonal, Repository, DI e Functional Options (Go)
     │   └── SKILL.md
-    └── php-architecture-patterns/  # PSRs, SOLID, Design Patterns e Código Limpo (PHP)
+    ├── php-architecture-patterns/  # PSRs, SOLID, Design Patterns e Código Limpo (PHP)
+    │   └── SKILL.md
+    └── endpoint-test-automation/   # Automação e especificação de testes de API (e2e/integration)
         └── SKILL.md
 ```
 
@@ -37,6 +39,7 @@ my-skills/
 | `js-ts-dependency-injection` | Criar classes com dependências, configurar container, escrever mocks | DI manual, Factories, TSyringe, InversifyJS, testes unitários   |
 | `go-architecture-patterns`   | Estruturar projeto Go, criar repositórios, configurar structs        | Hexagonal, Repository SQL, DI manual/Wire, Functional Options   |
 | `php-architecture-patterns`  | Revisar PSRs, estruturar projeto PHP, aplicar SOLID e clean code     | PSRs 1/3/4/7/12/14/15, SOLID, Repository, Value Objects, Enums  |
+| `endpoint-test-automation`   | Criar, validar ou estruturar testes de endpoint (integração/e2e)     | Métodos, URL base, Request JSON, status/response esperado       |
 
 ## Como usar
 
@@ -74,6 +77,7 @@ ln -sfn ~/Documents/my-skills/skills/js-ts-clean-architecture   ~/.gemini/config
 ln -sfn ~/Documents/my-skills/skills/js-ts-dependency-injection ~/.gemini/config/skills/js-ts-dependency-injection
 ln -sfn ~/Documents/my-skills/skills/go-architecture-patterns   ~/.gemini/config/skills/go-architecture-patterns
 ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/config/skills/endpoint-test-automation
 ```
 
 ### 💻 Gemini CLI
@@ -91,6 +95,7 @@ ln -sfn ~/Documents/my-skills/skills/js-ts-clean-architecture   ~/.gemini/skills
 ln -sfn ~/Documents/my-skills/skills/js-ts-dependency-injection ~/.gemini/skills/js-ts-dependency-injection
 ln -sfn ~/Documents/my-skills/skills/go-architecture-patterns   ~/.gemini/skills/go-architecture-patterns
 ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/skills/endpoint-test-automation
 ```
 
 > **Dica:** como são symlinks, qualquer edição nos arquivos de `~/Documents/my-skills/skills/`
