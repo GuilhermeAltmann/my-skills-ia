@@ -192,13 +192,146 @@ class UserEndpointTest extends TestCase
         $response->assertJsonFragment([
             'email' => 'alice@example.com'
         ]);
-    }
-}
 ```
 
 ---
 
-## 3. Guia de Casos de Teste Essenciais (Checklist)
+## 3. Script de Execução Independente (Alternativa ao Postman)
+
+Para realizar testes rápidos de ponta a ponta sem frameworks de teste pesados (como Postman/Newman), utilize o template abaixo. Ele é um script Node.js puro (sem dependências externas) que consome uma lista de endpoints, faz as requisições HTTP reais e valida as respostas.
+
+### Template: `test-endpoints.js`
+
+```javascript
+#!/usr/bin/env node
+
+/**
+ * Script independente para testar endpoints de API.
+ * Execução: node test-endpoints.js [base_url]
+ */
+
+const BASE_URL = process.argv[2] || 'http://localhost:3000';
+let AUTH_TOKEN = ''; // Será populado dinamicamente caso haja um passo de login
+
+const testCases = [
+  {
+    name: '1. Autenticação (Login)',
+    path: '/api/v1/auth/login',
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: {
+      email: 'admin@example.com',
+      password: 'password123'
+    },
+    expectedStatus: 200,
+    // Callback para processar o retorno e guardar dados (ex: token) para passos seguintes
+    after: (resBody) => {
+      if (resBody.token) {
+        AUTH_TOKEN = resBody.token;
+        console.log('   🔑 Token de autorização capturado com sucesso.');
+      }
+    }
+  },
+  {
+    name: '2. Criar Usuário (Sucesso)',
+    path: '/api/v1/users',
+    method: 'POST',
+    // Função dinâmica para injetar headers (ex: token obtido no passo anterior)
+    headers: () => ({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${AUTH_TOKEN}`
+    }),
+    body: {
+      name: 'Novo Agente',
+      email: 'agente.ia@example.com'
+    },
+    expectedStatus: 201,
+    validate: (resBody) => {
+      if (!resBody.id) throw new Error("Resposta não contém o campo 'id'");
+    }
+  },
+  {
+    name: '3. Buscar Usuários (Lista)',
+    path: '/api/v1/users',
+    method: 'GET',
+    headers: () => ({
+      'Authorization': `Bearer ${AUTH_TOKEN}`
+    }),
+    expectedStatus: 200
+  }
+];
+
+async function runTests() {
+  console.log(`🚀 Iniciando testes de endpoints em: ${BASE_URL}\n`);
+  let passed = 0;
+  let failed = 0;
+
+  for (const tc of testCases) {
+    console.log(`👉 Rodando: ${tc.name}`);
+    const url = `${BASE_URL}${tc.path}`;
+    
+    // Resolve headers dinâmicos se forem definidos como função
+    const resolvedHeaders = typeof tc.headers === 'function' ? tc.headers() : (tc.headers || {});
+    
+    const options = {
+      method: tc.method,
+      headers: resolvedHeaders
+    };
+
+    if (tc.body) {
+      options.body = JSON.stringify(tc.body);
+    }
+
+    try {
+      const response = await fetch(url, options);
+      const rawText = await response.text();
+      let body = {};
+      
+      if (rawText) {
+        try {
+          body = JSON.parse(rawText);
+        } catch {
+          body = rawText;
+        }
+      }
+
+      if (response.status !== tc.expectedStatus) {
+        throw new Error(`Status code inválido. Esperado: ${tc.expectedStatus}, Recebido: ${response.status}. Resposta: ${JSON.stringify(body)}`);
+      }
+
+      if (tc.validate) {
+        tc.validate(body);
+      }
+
+      if (tc.after) {
+        tc.after(body);
+      }
+
+      console.log(`   ✅ PASS (Status ${response.status})\n`);
+      passed++;
+    } catch (error) {
+      console.error(`   ❌ FAIL: ${error.message}\n`);
+      failed++;
+    }
+  }
+
+  console.log(`=================================`);
+  console.log(`📊 RESULTADO FINAL:`);
+  console.log(`   Sucessos: ${passed}`);
+  console.log(`   Falhas:   ${failed}`);
+  console.log(`=================================`);
+
+  if (failed > 0) {
+    process.exit(1);
+  }
+}
+
+runTests();
+```
+
+---
+
+## 4. Guia de Casos de Teste Essenciais (Checklist)
 
 Sempre garanta que os seguintes cenários sejam cobertos ao automatizar:
 
