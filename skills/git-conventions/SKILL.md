@@ -149,12 +149,18 @@ ou com rastreamento de issue:
 | `ci`         | Mudanças em pipelines de CI/CD                   | `ci/add-github-actions`           |
 | `experiment` | Experimentos ou provas de conceito               | `experiment/new-caching-strategy` |
 
-### Branches protegidas (não criar nem deletar)
+### Branches protegidas (proibido commitar diretamente ou deletar)
 
 | Branch    | Propósito                                  |
 | --------- | ------------------------------------------ |
 | `main`    | Código de produção estável                 |
 | `develop` | Branch de integração (próxima release)     |
+
+> [!IMPORTANT]
+> **REGRA DE OURO: PROIBIDO COMMITAR DIRETO NA MAIN OU DEVELOP**
+> * **NUNCA** crie commits diretamente nas branches `main` ou `develop`.
+> * Se você precisar fazer qualquer alteração, **mude para uma nova branch** apropriada (seguindo as regras de nomenclatura acima) antes de commitar.
+> * Toda alteração deve subir para a `main`/`develop` exclusivamente através de Pull Requests.
 
 ### Regras do identificador curto
 
