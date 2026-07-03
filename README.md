@@ -176,8 +176,9 @@ Em ambientes de CI/CD, clone este repositório como um step antes da execução 
 |--------|-----------|---------|
 | Global | Antigravity IDE | `~/.gemini/config/skills/` |
 | Global | Gemini CLI | `~/.gemini/skills/` |
-| Por projeto | Ambos | `.gemini/skills/` (raiz do projeto) |
+| Por projeto | Antigravity IDE / Gemini CLI | `.gemini/skills/` (raiz do projeto) |
 | Por workspace | Antigravity IDE | `.agents/skills/` (raiz do workspace) |
+| Por projeto | Claude Code / Claude CI | `.claude/prompts/` (raiz do projeto) |
 
 ---
 
