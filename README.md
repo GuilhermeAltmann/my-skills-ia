@@ -25,7 +25,9 @@ my-skills/
     │   └── SKILL.md
     ├── endpoint-test-automation/   # Automação e especificação de testes de API (e2e/integration)
     │   └── SKILL.md
-    └── brainstorming/              # Refinamento de ideias e especificações técnicas antes de codar
+    ├── brainstorming/              # Refinamento de ideias e especificações técnicas antes de codar
+    │   └── SKILL.md
+    └── writing-plans/              # Criação de planos de implementação detalhados baseados em micro-passos
         └── SKILL.md
 ```
 
@@ -43,6 +45,7 @@ my-skills/
 | `php-architecture-patterns`  | Revisar PSRs, estruturar projeto PHP, aplicar SOLID e clean code     | PSRs 1/3/4/7/12/14/15, SOLID, Repository, Value Objects, Enums  |
 | `endpoint-test-automation`   | Criar, validar ou estruturar testes de endpoint (integração/e2e)     | Métodos, URL base, Request JSON, status/response esperado       |
 | `brainstorming`              | Antes de iniciar qualquer trabalho criativo ou mudança de lógica     | Exploração de escopo, perguntas clarificadoras, propor 2-3 designs|
+| `writing-plans`              | Ter requisitos/specs definidos de uma tarefa de múltiplos passos     | Planos de implementação estruturados em micro-tarefas (TDD/commits)|
 
 ## Como usar
 
@@ -82,6 +85,7 @@ ln -sfn ~/Documents/my-skills/skills/go-architecture-patterns   ~/.gemini/config
 ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
 ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/config/skills/endpoint-test-automation
 ln -sfn ~/Documents/my-skills/skills/brainstorming              ~/.gemini/config/skills/brainstorming
+ln -sfn ~/Documents/my-skills/skills/writing-plans              ~/.gemini/config/skills/writing-plans
 ```
 
 ### 💻 Gemini CLI
@@ -101,6 +105,7 @@ ln -sfn ~/Documents/my-skills/skills/go-architecture-patterns   ~/.gemini/skills
 ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
 ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/skills/endpoint-test-automation
 ln -sfn ~/Documents/my-skills/skills/brainstorming              ~/.gemini/skills/brainstorming
+ln -sfn ~/Documents/my-skills/skills/writing-plans              ~/.gemini/skills/writing-plans
 ```
 
 > **Dica:** como são symlinks, qualquer edição nos arquivos de `~/Documents/my-skills/skills/`
