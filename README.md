@@ -27,7 +27,9 @@ my-skills/
     │   └── SKILL.md
     ├── brainstorming/              # Refinamento de ideias e especificações técnicas antes de codar
     │   └── SKILL.md
-    └── writing-plans/              # Criação de planos de implementação detalhados baseados em micro-passos
+    ├── writing-plans/              # Criação de planos de implementação detalhados baseados em micro-passos
+    │   └── SKILL.md
+    └── token-reduction/            # Diretrizes para otimização de contexto e consumo de tokens
         └── SKILL.md
 ```
 
@@ -46,6 +48,7 @@ my-skills/
 | `endpoint-test-automation`   | Criar, validar ou estruturar testes de endpoint (integração/e2e)     | Métodos, URL base, Request JSON, status/response esperado       |
 | `brainstorming`              | Antes de iniciar qualquer trabalho criativo ou mudança de lógica     | Exploração de escopo, perguntas clarificadoras, propor 2-3 designs|
 | `writing-plans`              | Ter requisitos/specs definidos de uma tarefa de múltiplos passos     | Planos de implementação estruturados em micro-tarefas (TDD/commits)|
+| `token-reduction`            | Ao trabalhar com arquivos muito grandes ou logs extensos de terminal | Diretrizes para ler trechos específicos, evitar rewrites e filtrar logs|
 
 ## Como usar
 
@@ -86,6 +89,7 @@ ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/config
 ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/config/skills/endpoint-test-automation
 ln -sfn ~/Documents/my-skills/skills/brainstorming              ~/.gemini/config/skills/brainstorming
 ln -sfn ~/Documents/my-skills/skills/writing-plans              ~/.gemini/config/skills/writing-plans
+ln -sfn ~/Documents/my-skills/skills/token-reduction            ~/.gemini/config/skills/token-reduction
 ```
 
 ### 💻 Gemini CLI
@@ -106,6 +110,7 @@ ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/skills
 ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/skills/endpoint-test-automation
 ln -sfn ~/Documents/my-skills/skills/brainstorming              ~/.gemini/skills/brainstorming
 ln -sfn ~/Documents/my-skills/skills/writing-plans              ~/.gemini/skills/writing-plans
+ln -sfn ~/Documents/my-skills/skills/token-reduction            ~/.gemini/skills/token-reduction
 ```
 
 > **Dica:** como são symlinks, qualquer edição nos arquivos de `~/Documents/my-skills/skills/`
