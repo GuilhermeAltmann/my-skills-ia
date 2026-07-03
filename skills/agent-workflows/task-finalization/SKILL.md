@@ -65,8 +65,10 @@ Em vez de apenas fornecer o link de criação de PR vazio, o agente deve propor 
 2. **Estrutura obrigatória da sugestão**:
    - Um primeiro parágrafo explicando detalhadamente **o que** foi alterado.
    - Um segundo parágrafo explicando o **motivo** pelo qual a mudança foi realizada daquela maneira (decisões técnicas, trade-offs, resolução de problemas).
-3. **Solicite a aprovação do usuário**: "Criei uma sugestão de descrição para o seu PR em `pr_suggestion.md`. Você aceita esta sugestão para a Pull Request?"
-4. **Se o usuário aceitar**, o agente pode utilizar o GitHub/GitLab CLI (ex: `gh pr create -F pr_suggestion.md`) se estiver disponível, ou simplesmente instruir o usuário a copiar o conteúdo para o link do PR.
+3. **Solicite a aprovação do usuário**: "Criei uma sugestão de descrição para o seu PR em `pr_suggestion.md`. Você aceita esta sugestão para que eu crie a Pull Request automaticamente?"
+4. **Criação Automática**: Se o usuário aceitar, o agente **DEVE** executar o comando para abrir o PR utilizando a ferramenta de linha de comando (ex: GitHub CLI). Exemplo:
+   `gh pr create --title "<titulo_do_pr>" --body-file pr_suggestion.md`
+   *(Apenas se o comando falhar, o agente deve instruir o usuário a copiar manualmente para o link).*
 5. **Apague o arquivo temporário** após a submissão.
 
 ---
