@@ -1,6 +1,6 @@
 # My AI Agent Skills
 
-Coleção de skills personalizadas para agentes de IA (compatível com Antigravity IDE).
+Coleção de skills personalizadas para agentes de IA (compatível com Antigravity IDE, Claude Code, Claude CI e Gemini CLI).
 
 ## Estrutura
 
