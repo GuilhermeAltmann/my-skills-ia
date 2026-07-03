@@ -7,30 +7,22 @@ Coleção de skills personalizadas para agentes de IA (compatível com Antigravi
 ```
 my-skills/
 └── skills/
-    ├── git-conventions/            # Padronização de commits e branches
-    │   └── SKILL.md
-    ├── code-review/                # Revisão de código estruturada
-    │   └── SKILL.md
-    ├── pr-documentation/           # Documentação de Pull Requests
-    │   └── SKILL.md
-    ├── semantic-versioning/        # Versionamento semântico (SemVer)
-    │   └── SKILL.md
-    ├── js-ts-clean-architecture/   # Arquitetura em Camadas (Clean Architecture)
-    │   └── SKILL.md
-    ├── js-ts-dependency-injection/ # Injeção de Dependência (DI)
-    │   └── SKILL.md
-    ├── go-architecture-patterns/   # Hexagonal, Repository, DI e Functional Options (Go)
-    │   └── SKILL.md
-    ├── php-architecture-patterns/  # PSRs, SOLID, Design Patterns e Código Limpo (PHP)
-    │   └── SKILL.md
-    ├── endpoint-test-automation/   # Automação e especificação de testes de API (e2e/integration)
-    │   └── SKILL.md
-    ├── brainstorming/              # Refinamento de ideias e especificações técnicas antes de codar
-    │   └── SKILL.md
-    ├── writing-plans/              # Criação de planos de implementação detalhados baseados em micro-passos
-    │   └── SKILL.md
-    └── token-reduction/            # Diretrizes para otimização de contexto e consumo de tokens
-        └── SKILL.md
+    ├── git-devops/                 # DevOps e Controle de Versão
+    │   ├── git-conventions/        # Padronização de commits e branches
+    │   ├── pr-documentation/       # Documentação de Pull Requests
+    │   └── semantic-versioning/    # Versionamento semântico (SemVer)
+    ├── architecture/               # Padrões Arquiteturais e Design Patterns
+    │   ├── js-ts-clean-architecture/
+    │   ├── js-ts-dependency-injection/
+    │   ├── go-architecture-patterns/
+    │   └── php-architecture-patterns/
+    ├── testing/                    # Testes e Qualidade de Código
+    │   ├── code-review/
+    │   └── endpoint-test-automation/
+    └── agent-workflows/            # Otimização e Fluxos de Agentes de IA
+        ├── brainstorming/
+        ├── writing-plans/
+        └── token-reduction/
 ```
 
 ## Skills disponíveis
@@ -78,18 +70,25 @@ O IDE lê skills globais de `~/.gemini/config/skills/`:
 ```bash
 mkdir -p ~/.gemini/config/skills
 
-ln -sfn ~/Documents/my-skills/skills/git-conventions            ~/.gemini/config/skills/git-conventions
-ln -sfn ~/Documents/my-skills/skills/code-review                ~/.gemini/config/skills/code-review
-ln -sfn ~/Documents/my-skills/skills/pr-documentation           ~/.gemini/config/skills/pr-documentation
-ln -sfn ~/Documents/my-skills/skills/semantic-versioning        ~/.gemini/config/skills/semantic-versioning
-ln -sfn ~/Documents/my-skills/skills/js-ts-clean-architecture   ~/.gemini/config/skills/js-ts-clean-architecture
-ln -sfn ~/Documents/my-skills/skills/js-ts-dependency-injection ~/.gemini/config/skills/js-ts-dependency-injection
-ln -sfn ~/Documents/my-skills/skills/go-architecture-patterns   ~/.gemini/config/skills/go-architecture-patterns
-ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
-ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/config/skills/endpoint-test-automation
-ln -sfn ~/Documents/my-skills/skills/brainstorming              ~/.gemini/config/skills/brainstorming
-ln -sfn ~/Documents/my-skills/skills/writing-plans              ~/.gemini/config/skills/writing-plans
-ln -sfn ~/Documents/my-skills/skills/token-reduction            ~/.gemini/config/skills/token-reduction
+# git-devops
+ln -sfn ~/Documents/my-skills/skills/git-devops/git-conventions            ~/.gemini/config/skills/git-conventions
+ln -sfn ~/Documents/my-skills/skills/git-devops/pr-documentation           ~/.gemini/config/skills/pr-documentation
+ln -sfn ~/Documents/my-skills/skills/git-devops/semantic-versioning        ~/.gemini/config/skills/semantic-versioning
+
+# architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-clean-architecture   ~/.gemini/config/skills/js-ts-clean-architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-dependency-injection ~/.gemini/config/skills/js-ts-dependency-injection
+ln -sfn ~/Documents/my-skills/skills/architecture/go-architecture-patterns   ~/.gemini/config/skills/go-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
+
+# testing
+ln -sfn ~/Documents/my-skills/skills/testing/code-review                ~/.gemini/config/skills/code-review
+ln -sfn ~/Documents/my-skills/skills/testing/endpoint-test-automation   ~/.gemini/config/skills/endpoint-test-automation
+
+# agent-workflows
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/brainstorming              ~/.gemini/config/skills/brainstorming
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/writing-plans              ~/.gemini/config/skills/writing-plans
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/token-reduction            ~/.gemini/config/skills/token-reduction
 ```
 
 ### 💻 Gemini CLI
@@ -99,18 +98,25 @@ O CLI lê skills globais de `~/.gemini/skills/`:
 ```bash
 mkdir -p ~/.gemini/skills
 
-ln -sfn ~/Documents/my-skills/skills/git-conventions            ~/.gemini/skills/git-conventions
-ln -sfn ~/Documents/my-skills/skills/code-review                ~/.gemini/skills/code-review
-ln -sfn ~/Documents/my-skills/skills/pr-documentation           ~/.gemini/skills/pr-documentation
-ln -sfn ~/Documents/my-skills/skills/semantic-versioning        ~/.gemini/skills/semantic-versioning
-ln -sfn ~/Documents/my-skills/skills/js-ts-clean-architecture   ~/.gemini/skills/js-ts-clean-architecture
-ln -sfn ~/Documents/my-skills/skills/js-ts-dependency-injection ~/.gemini/skills/js-ts-dependency-injection
-ln -sfn ~/Documents/my-skills/skills/go-architecture-patterns   ~/.gemini/skills/go-architecture-patterns
-ln -sfn ~/Documents/my-skills/skills/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
-ln -sfn ~/Documents/my-skills/skills/endpoint-test-automation   ~/.gemini/skills/endpoint-test-automation
-ln -sfn ~/Documents/my-skills/skills/brainstorming              ~/.gemini/skills/brainstorming
-ln -sfn ~/Documents/my-skills/skills/writing-plans              ~/.gemini/skills/writing-plans
-ln -sfn ~/Documents/my-skills/skills/token-reduction            ~/.gemini/skills/token-reduction
+# git-devops
+ln -sfn ~/Documents/my-skills/skills/git-devops/git-conventions            ~/.gemini/skills/git-conventions
+ln -sfn ~/Documents/my-skills/skills/git-devops/pr-documentation           ~/.gemini/skills/pr-documentation
+ln -sfn ~/Documents/my-skills/skills/git-devops/semantic-versioning        ~/.gemini/skills/semantic-versioning
+
+# architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-clean-architecture   ~/.gemini/skills/js-ts-clean-architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-dependency-injection ~/.gemini/skills/js-ts-dependency-injection
+ln -sfn ~/Documents/my-skills/skills/architecture/go-architecture-patterns   ~/.gemini/skills/go-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
+
+# testing
+ln -sfn ~/Documents/my-skills/skills/testing/code-review                ~/.gemini/skills/code-review
+ln -sfn ~/Documents/my-skills/skills/testing/endpoint-test-automation   ~/.gemini/skills/endpoint-test-automation
+
+# agent-workflows
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/brainstorming              ~/.gemini/skills/brainstorming
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/writing-plans              ~/.gemini/skills/writing-plans
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/token-reduction            ~/.gemini/skills/token-reduction
 ```
 
 > **Dica:** como são symlinks, qualquer edição nos arquivos de `~/Documents/my-skills/skills/`
