@@ -12,10 +12,14 @@ my-skills/
     │   ├── pr-documentation/       # Documentação de Pull Requests
     │   └── semantic-versioning/    # Versionamento semântico (SemVer)
     ├── architecture/               # Padrões Arquiteturais e Design Patterns
-    │   ├── js-ts-clean-architecture/
-    │   ├── js-ts-dependency-injection/
-    │   ├── go-architecture-patterns/
-    │   └── php-architecture-patterns/
+    │   ├── backend/
+    │   │   ├── js-ts-clean-architecture/
+    │   │   ├── js-ts-dependency-injection/
+    │   │   ├── go-architecture-patterns/
+    │   │   └── php-architecture-patterns/
+    │   └── frontend/               # Padrões Arquiteturais de UI e Client-Side
+    │       ├── js-ts-frontend-architecture/
+    │       └── js-ts-state-management/
     ├── testing/                    # Testes e Qualidade de Código
     │   ├── code-review/
     │   └── endpoint-test-automation/
@@ -38,12 +42,19 @@ my-skills/
 
 ### 📁 Arquitetura & Design (`architecture/`)
 
+#### Backend (`architecture/backend/`)
 | Skill | Gatilho | Descrição resumida |
 | :--- | :--- | :--- |
 | `js-ts-clean-architecture` | Estruturar projeto, decidir onde uma classe vive, revisar camadas | Domain / Application / Infrastructure / Presentation + regras |
 | `js-ts-dependency-injection` | Criar classes com dependências, configurar container, escrever mocks | DI manual, Factories, TSyringe, InversifyJS, testes unitários |
 | `go-architecture-patterns` | Estruturar projeto Go, criar repositórios, configurar structs | Hexagonal, Repository SQL, DI manual/Wire, Functional Options |
 | `php-architecture-patterns` | Revisar PSRs, estruturar projeto PHP, aplicar SOLID e clean code | PSRs 1/3/4/7/12/14/15, SOLID, Repository, Value Objects, Enums |
+
+#### Frontend (`architecture/frontend/`)
+| Skill | Gatilho | Descrição resumida |
+| :--- | :--- | :--- |
+| `js-ts-frontend-architecture` | Estruturar frontend, organizar componentes, criar services de API | Padrões de separação de UI e lógica, Smart vs Dumb components |
+| `js-ts-state-management` | Configurar estado local, global, ou cache de requisição | Padrões para Context API, Zustand, React Query/SWR |
 
 ### 📁 Qualidade & Testes (`testing/`)
 
@@ -97,10 +108,12 @@ ln -sfn ~/Documents/my-skills/skills/git-devops/pr-documentation           ~/.ge
 ln -sfn ~/Documents/my-skills/skills/git-devops/semantic-versioning        ~/.gemini/config/skills/semantic-versioning
 
 # architecture
-ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-clean-architecture   ~/.gemini/config/skills/js-ts-clean-architecture
-ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-dependency-injection ~/.gemini/config/skills/js-ts-dependency-injection
-ln -sfn ~/Documents/my-skills/skills/architecture/go-architecture-patterns   ~/.gemini/config/skills/go-architecture-patterns
-ln -sfn ~/Documents/my-skills/skills/architecture/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-clean-architecture   ~/.gemini/config/skills/js-ts-clean-architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-dependency-injection ~/.gemini/config/skills/js-ts-dependency-injection
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/go-architecture-patterns   ~/.gemini/config/skills/go-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-frontend-architecture ~/.gemini/config/skills/js-ts-frontend-architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-state-management    ~/.gemini/config/skills/js-ts-state-management
 
 # testing
 ln -sfn ~/Documents/my-skills/skills/testing/code-review                ~/.gemini/config/skills/code-review
@@ -126,10 +139,12 @@ ln -sfn ~/Documents/my-skills/skills/git-devops/pr-documentation           ~/.ge
 ln -sfn ~/Documents/my-skills/skills/git-devops/semantic-versioning        ~/.gemini/skills/semantic-versioning
 
 # architecture
-ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-clean-architecture   ~/.gemini/skills/js-ts-clean-architecture
-ln -sfn ~/Documents/my-skills/skills/architecture/js-ts-dependency-injection ~/.gemini/skills/js-ts-dependency-injection
-ln -sfn ~/Documents/my-skills/skills/architecture/go-architecture-patterns   ~/.gemini/skills/go-architecture-patterns
-ln -sfn ~/Documents/my-skills/skills/architecture/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-clean-architecture   ~/.gemini/skills/js-ts-clean-architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-dependency-injection ~/.gemini/skills/js-ts-dependency-injection
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/go-architecture-patterns   ~/.gemini/skills/go-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-frontend-architecture ~/.gemini/skills/js-ts-frontend-architecture
+ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-state-management    ~/.gemini/skills/js-ts-state-management
 
 # testing
 ln -sfn ~/Documents/my-skills/skills/testing/code-review                ~/.gemini/skills/code-review

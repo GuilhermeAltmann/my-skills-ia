@@ -1,15 +1,15 @@
 ---
-name: js-ts-dependency-injection
+name: backend-js-ts-dependency-injection
 description: >
-  Define e aplica padrões de Injeção de Dependência (DI) em projetos JavaScript
-  e TypeScript. Use esta skill ao criar classes que dependem de serviços externos,
-  ao configurar um container de DI, ao escrever testes unitários com mocks, ou ao
-  revisar se acoplamento entre módulos está correto. Complementa a skill js-ts-clean-architecture.
+  Define e aplica padrões de Injeção de Dependência (DI) em projetos Backend JavaScript
+  e TypeScript (Node.js). Use esta skill ao criar classes que dependem de serviços externos,
+  ao configurar um container de DI em APIs, ao escrever testes unitários com mocks, ou ao
+  revisar se acoplamento entre módulos de backend está correto. Complementa a skill backend-js-ts-clean-architecture.
 ---
 
-# JS/TS Dependency Injection — Injeção de Dependência
+# Backend JS/TS Dependency Injection — Injeção de Dependência
 
-Esta skill define como aplicar DI de forma consistente em projetos JS/TS,
+Esta skill define como aplicar DI de forma consistente em projetos Node.js/Backend,
 desde o padrão manual até containers como TSyringe e InversifyJS.
 
 ---
