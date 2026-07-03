@@ -1,18 +1,18 @@
 ---
-name: js-ts-clean-architecture
+name: backend-js-ts-clean-architecture
 description: >
   Define e aplica a Arquitetura em Camadas (Layered Architecture) seguindo os
-  princípios da Clean Architecture em projetos JavaScript e TypeScript. Use esta
-  skill ao estruturar um novo projeto, revisar organização de pastas, decidir onde
-  uma classe/função deve residir, ou verificar se dependências entre camadas estão
-  corretas.
+  princípios da Clean Architecture exclusivamente no contexto de Backend (Node.js,
+  Express, NestJS). Use esta skill ao estruturar um novo projeto de API, revisar 
+  organização de pastas, decidir onde uma classe/função deve residir, ou verificar
+  se dependências entre camadas do servidor estão corretas.
 ---
 
-# JS/TS Clean Architecture — Arquitetura em Camadas
+# Backend JS/TS Clean Architecture — Arquitetura em Camadas
 
 Esta skill define a estrutura de camadas, regras de dependência, convenções de
-nomenclatura e padrões de código para projetos JavaScript e TypeScript seguindo
-os princípios da Clean Architecture (Robert C. Martin).
+nomenclatura e padrões de código para projetos de Backend JavaScript e TypeScript
+seguindo os princípios da Clean Architecture (Robert C. Martin).
 
 ---
 
