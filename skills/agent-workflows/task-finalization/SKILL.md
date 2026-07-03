@@ -26,10 +26,13 @@ O processo de finalização de tarefa deve seguir estes 4 passos obrigatórios:
        [Passo 2: Limpar Workspace]
                  │
                  ▼
-     [Passo 3: Verificar Git/Branch]
+    [Passo 3: Sugerir Descrição de PR]
                  │
                  ▼
-  [Passo 4: Emitir Relatório de Entrega]
+    [Passo 4: Retorno à Main (Cleanup)]
+                 │
+                 ▼
+  [Passo 5: Emitir Relatório de Entrega]
 ```
 
 ---
@@ -54,7 +57,21 @@ Antes de encerrar o turno, o agente deve garantir que não deixou "lixo" no work
 
 ---
 
-## 3. Retorno para a Branch Principal e Cleanup de Branches
+## 3. Sugerir Descrição de PR/MR
+
+Em vez de apenas fornecer o link de criação de PR vazio, o agente deve propor o preenchimento da descrição:
+
+1. **Crie um arquivo temporário** (ex: `pr_suggestion.md`) na raiz do projeto contendo a sugestão.
+2. **Estrutura obrigatória da sugestão**:
+   - Um primeiro parágrafo explicando detalhadamente **o que** foi alterado.
+   - Um segundo parágrafo explicando o **motivo** pelo qual a mudança foi realizada daquela maneira (decisões técnicas, trade-offs, resolução de problemas).
+3. **Solicite a aprovação do usuário**: "Criei uma sugestão de descrição para o seu PR em `pr_suggestion.md`. Você aceita esta sugestão para a Pull Request?"
+4. **Se o usuário aceitar**, o agente pode utilizar o GitHub/GitLab CLI (ex: `gh pr create -F pr_suggestion.md`) se estiver disponível, ou simplesmente instruir o usuário a copiar o conteúdo para o link do PR.
+5. **Apague o arquivo temporário** após a submissão.
+
+---
+
+## 4. Retorno para a Branch Principal e Cleanup de Branches
 
 Após a conclusão e envio do push para o remoto, o agente **não deve** apenas recomendar os comandos de git checkout/pull/delete no relatório final. Em vez disso, ele deve perguntar ativamente ao usuário se deseja que o agente execute a limpeza automaticamente.
 
@@ -70,7 +87,7 @@ Após a conclusão e envio do push para o remoto, o agente **não deve** apenas 
 
 ---
 
-## 4. Emitir Relatório de Entrega
+## 5. Emitir Relatório de Entrega
 
 No final do turno, apresente um sumário estruturado contendo:
 
@@ -89,8 +106,8 @@ A branch com as implementações foi enviada com sucesso para o repositório rem
 * **Limpeza Automática**: [Executada com sucesso (branch local removida e main atualizada) / Mantida a pedido do usuário]
 
 ### Ações Pendentes / Próximos Passos:
-1. Abra o link abaixo para criar ou visualizar a Pull Request no GitHub:
-   👉 [Criar Pull Request](https://github.com/usuario/repositorio/pull/new/nome-da-branch)
+1. Abra o link abaixo para visualizar a Pull Request no GitHub:
+   👉 [Acessar Pull Request](https://github.com/usuario/repositorio/pull/...)
 2. Aguarde a validação da pipeline de CI/CD do projeto.
 3. Solicite a revisão dos revisores indicados.
 ```
@@ -103,7 +120,10 @@ A branch com as implementações foi enviada com sucesso para o repositório rem
 - [ ] Removi todos os logs de debug (`console.log`, `var_dump`, etc.) do código de produção?
 - [ ] Excluí arquivos de testes temporários e scratch scripts locais?
 - [ ] Confirmei que a branch remota está atualizada com o último commit local?
+- [ ] Criei o arquivo de sugestão de PR (`pr_suggestion.md`) com 2 parágrafos (O quê e o Porquê)?
+- [ ] Solicitei a aprovação do usuário para o texto do PR?
 - [ ] Perguntei ao usuário se ele deseja a execução da limpeza da branch automática?
 - [ ] Voltei para a branch `main`, realizei o `git pull` e apaguei a branch local temporária (se aprovado pelo usuário)?
 - [ ] Forneci o link direto do GitHub/GitLab para abertura/visualização da PR?
+- [ ] Apaguei o `pr_suggestion.md` no final do processo?
 - [ ] Respondi de forma concisa e direta, sem redundâncias textuais?
