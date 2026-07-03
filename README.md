@@ -7,10 +7,12 @@ Coleção de skills personalizadas para agentes de IA (compatível com Antigravi
 ```
 my-skills/
 └── skills/
-    ├── git-devops/                 # DevOps e Controle de Versão
+    ├── git/                        # Controle de Versão e CI
     │   ├── git-conventions/        # Padronização de commits e branches
     │   ├── pr-documentation/       # Documentação de Pull Requests
     │   └── semantic-versioning/    # Versionamento semântico (SemVer)
+    ├── devops/                     # Infraestrutura e Docker
+    │   └── docker-best-practices/  # Otimização, redes e Nginx + Web
     ├── architecture/               # Padrões Arquiteturais e Design Patterns
     │   ├── backend/
     │   │   ├── js-ts-clean-architecture/
@@ -32,13 +34,19 @@ my-skills/
 
 ## Skills disponíveis
 
-### 📁 Git & DevOps (`git-devops/`)
+### 📁 Git (`git/`)
 
 | Skill | Gatilho | Descrição resumida |
 | :--- | :--- | :--- |
 | `git-conventions` | Criar commit, nomear branch, revisar convenções Git | Conventional Commits + GitFlow |
 | `pr-documentation` | Abrir PR, escrever descrição, validar template de PR | Template completo com checklist, tipo, evidências e como testar |
 | `semantic-versioning` | Criar release, definir versão, atualizar CHANGELOG | SemVer 2.0.0 com CHANGELOG, tags Git e manifests |
+
+### 📁 DevOps (`devops/`)
+
+| Skill | Gatilho | Descrição resumida |
+| :--- | :--- | :--- |
+| `docker-best-practices` | Editar/criar Dockerfile ou docker-compose.yml | Otimização de build (cache, multi-stage), networks e separação (Nginx + app) |
 
 ### 📁 Arquitetura & Design (`architecture/`)
 
@@ -102,10 +110,13 @@ Tanto o Antigravity IDE quanto o Antigravity CLI leem as skills globais do diret
 ```bash
 mkdir -p ~/.gemini/config/skills
 
-# git-devops
-ln -sfn ~/Documents/my-skills/skills/git-devops/git-conventions            ~/.gemini/config/skills/git-conventions
-ln -sfn ~/Documents/my-skills/skills/git-devops/pr-documentation           ~/.gemini/config/skills/pr-documentation
-ln -sfn ~/Documents/my-skills/skills/git-devops/semantic-versioning        ~/.gemini/config/skills/semantic-versioning
+# git
+ln -sfn ~/Documents/my-skills/skills/git/git-conventions               ~/.gemini/config/skills/git-conventions
+ln -sfn ~/Documents/my-skills/skills/git/pr-documentation              ~/.gemini/config/skills/pr-documentation
+ln -sfn ~/Documents/my-skills/skills/git/semantic-versioning           ~/.gemini/config/skills/semantic-versioning
+
+# devops
+ln -sfn ~/Documents/my-skills/skills/devops/docker-best-practices      ~/.gemini/config/skills/docker-best-practices
 
 # architecture
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-clean-architecture   ~/.gemini/config/skills/js-ts-clean-architecture
@@ -133,10 +144,13 @@ O antigo Gemini CLI lia skills globais de `~/.gemini/skills/`:
 ```bash
 mkdir -p ~/.gemini/skills
 
-# git-devops
-ln -sfn ~/Documents/my-skills/skills/git-devops/git-conventions            ~/.gemini/skills/git-conventions
-ln -sfn ~/Documents/my-skills/skills/git-devops/pr-documentation           ~/.gemini/skills/pr-documentation
-ln -sfn ~/Documents/my-skills/skills/git-devops/semantic-versioning        ~/.gemini/skills/semantic-versioning
+# git
+ln -sfn ~/Documents/my-skills/skills/git/git-conventions               ~/.gemini/skills/git-conventions
+ln -sfn ~/Documents/my-skills/skills/git/pr-documentation              ~/.gemini/skills/pr-documentation
+ln -sfn ~/Documents/my-skills/skills/git/semantic-versioning           ~/.gemini/skills/semantic-versioning
+
+# devops
+ln -sfn ~/Documents/my-skills/skills/devops/docker-best-practices      ~/.gemini/skills/docker-best-practices
 
 # architecture
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-clean-architecture   ~/.gemini/skills/js-ts-clean-architecture
