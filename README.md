@@ -84,9 +84,9 @@ no diretório `.agents/` do projeto apontando para este diretório.
 Para que as skills fiquem disponíveis em **qualquer projeto**, sem precisar configurar
 cada workspace individualmente, instale-as via symlink nas pastas globais de cada ferramenta.
 
-### 🖥️ Antigravity IDE
+### 🚀 Antigravity (IDE e CLI)
 
-O IDE lê skills globais de `~/.gemini/config/skills/`:
+Tanto o Antigravity IDE quanto o Antigravity CLI leem as skills globais do diretório `~/.gemini/config/skills/`:
 
 ```bash
 mkdir -p ~/.gemini/config/skills
@@ -113,9 +113,9 @@ ln -sfn ~/Documents/my-skills/skills/agent-workflows/token-reduction            
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/task-finalization          ~/.gemini/config/skills/task-finalization
 ```
 
-### 💻 Gemini CLI
+### 💻 Gemini CLI (Versão Antiga)
 
-O CLI lê skills globais de `~/.gemini/skills/`:
+O antigo Gemini CLI lia skills globais de `~/.gemini/skills/`:
 
 ```bash
 mkdir -p ~/.gemini/skills
