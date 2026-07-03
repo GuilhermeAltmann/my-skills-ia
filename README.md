@@ -145,6 +145,31 @@ ln -sfn ~/Documents/my-skills/skills/agent-workflows/task-finalization          
 > **Dica:** como são symlinks, qualquer edição nos arquivos de `~/Documents/my-skills/skills/`
 > é refletida automaticamente nas duas ferramentas — um único lugar para manter tudo.
 
+### 🤖 Claude Code e Claude CI
+
+Para utilizar estas skills com o **Claude Code** no terminal ou em pipelines do **Claude CI**, você deve disponibilizá-las no diretório de contexto ou de prompts (`.claude/` ou equivalente) do seu projeto.
+
+**Claude Code (Local):**
+Crie links simbólicos das skills que deseja aplicar diretamente no diretório do seu projeto:
+
+```bash
+mkdir -p .claude/prompts
+
+# Exemplo de link local para o projeto
+ln -sfn ~/Documents/my-skills/skills/git-devops/git-conventions .claude/prompts/git-conventions
+```
+
+**Claude CI (Pipeline):**
+Em ambientes de CI/CD, clone este repositório como um step antes da execução do Claude CI e copie as skills para a pasta de contexto que o Claude analisa:
+
+```yaml
+- name: Preparar Skills para Claude CI
+  run: |
+    git clone https://github.com/GuilhermeAltmann/my-skills-ia.git /tmp/my-skills
+    mkdir -p .claude/prompts
+    cp -r /tmp/my-skills/skills/* .claude/prompts/
+```
+
 ### Caminhos de descoberta
 
 | Escopo | Ferramenta | Caminho |
