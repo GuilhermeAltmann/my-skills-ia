@@ -48,6 +48,7 @@ Esta skill define as melhores práticas para otimizar o uso da janela de context
 ## 5. Estilo de Comunicação do Agente
 
 - **Respostas Concisas**: Mantenha as explicações textuais o mais curtas possíveis. Evite resumir linhas de código que o usuário já consegue ver no editor ou no próprio diff da ferramenta.
+- **Ocultar Diffs no Chat**: **NUNCA** imprima blocos de código modificados, diffs completos ou o conteúdo recém-alterado nas mensagens de chat (respostas do agente). O usuário já visualizará essas alterações nos artefatos ou no diff da sua própria IDE. Exibi-los no chat consome tokens massivamente e polui o histórico.
 - **Evite Desculpas**: Em caso de erros de ferramentas ou lints, corrija-os imediatamente na próxima chamada de ferramenta em vez de enviar parágrafos pedindo desculpas.
 - **Links Diretos**: Ao referenciar arquivos, use o formato de link markdown com esquema `file://` apontando para a linha específica (ex: `[User.go:L42](file:///path/to/User.go#L42)`). Isso ajuda a focar o contexto no arquivo e linha exatos.
 
@@ -59,4 +60,5 @@ Esta skill define as melhores práticas para otimizar o uso da janela de context
 - [ ] Usei `replace_file_content` em vez de reescrever o arquivo inteiro com `write_to_file`?
 - [ ] Filtrei o output de comandos longos ou verbosos utilizando redirecionamento ou pipes (`grep`, `head`)?
 - [ ] Limitei o escopo de busca às pastas relevantes, ignorando `node_modules` / `vendor`?
+- [ ] Evitei exibir no chat o output ou diff do código que acabei de alterar?
 - [ ] Escrevi respostas diretas e concisas, sem redundâncias textuais?
