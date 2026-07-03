@@ -22,7 +22,8 @@ my-skills/
     └── agent-workflows/            # Otimização e Fluxos de Agentes de IA
         ├── brainstorming/
         ├── writing-plans/
-        └── token-reduction/
+        ├── token-reduction/
+        └── task-finalization/      # Limpeza, documentação e entrega de tarefas estruturadas
 ```
 
 ## Skills disponíveis
@@ -41,6 +42,7 @@ my-skills/
 | `brainstorming`              | Antes de iniciar qualquer trabalho criativo ou mudança de lógica     | Exploração de escopo, perguntas clarificadoras, propor 2-3 designs|
 | `writing-plans`              | Ter requisitos/specs definidos de uma tarefa de múltiplos passos     | Planos de implementação estruturados em micro-tarefas (TDD/commits)|
 | `token-reduction`            | Ao trabalhar com arquivos muito grandes ou logs extensos de terminal | Diretrizes para ler trechos específicos, evitar rewrites e filtrar logs|
+| `task-finalization`          | Após realizar commits finais, push e solicitar abertura de PR       | Elaboração de walkthrough, limpeza de workspace e relatório de entrega|
 
 ## Como usar
 
@@ -89,6 +91,7 @@ ln -sfn ~/Documents/my-skills/skills/testing/endpoint-test-automation   ~/.gemin
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/brainstorming              ~/.gemini/config/skills/brainstorming
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/writing-plans              ~/.gemini/config/skills/writing-plans
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/token-reduction            ~/.gemini/config/skills/token-reduction
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/task-finalization          ~/.gemini/config/skills/task-finalization
 ```
 
 ### 💻 Gemini CLI
@@ -117,6 +120,7 @@ ln -sfn ~/Documents/my-skills/skills/testing/endpoint-test-automation   ~/.gemin
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/brainstorming              ~/.gemini/skills/brainstorming
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/writing-plans              ~/.gemini/skills/writing-plans
 ln -sfn ~/Documents/my-skills/skills/agent-workflows/token-reduction            ~/.gemini/skills/token-reduction
+ln -sfn ~/Documents/my-skills/skills/agent-workflows/task-finalization          ~/.gemini/skills/task-finalization
 ```
 
 > **Dica:** como são symlinks, qualquer edição nos arquivos de `~/Documents/my-skills/skills/`
