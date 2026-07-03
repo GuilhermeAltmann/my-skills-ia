@@ -224,7 +224,13 @@ feature/autenticacao-usuario
 2. Verifique se há número de issue para incluir no nome.
 3. Crie um identificador curto descritivo, em kebab-case.
 4. Valide o nome completo: sem maiúsculas, sem underscores, sem acentos.
-5. Crie a branch a partir da base correta (`develop` para features/fixes, `main` para hotfixes).
+5. **Verificação com o Usuário**: Sugira o nome da branch ao usuário e pergunte se ele aprova. 
+   
+> [!IMPORTANT]
+> **HARD GATE (PARADA OBRIGATÓRIA)**
+> O agente **DEVE PARAR A EXECUÇÃO E AGUARDAR A RESPOSTA** após sugerir o nome da branch. NUNCA execute o comando `git checkout -b` ou crie a branch sem obter a aprovação explícita do usuário para o nome sugerido.
+
+6. Crie a branch a partir da base correta (`develop` para features/fixes, `main` para hotfixes) apenas após a aprovação.
 
 ### Ao revisar commits/branches existentes
 

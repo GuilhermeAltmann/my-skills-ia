@@ -66,6 +66,11 @@ Em vez de apenas fornecer o link de criação de PR vazio, o agente deve propor 
    - Um primeiro parágrafo explicando detalhadamente **o que** foi alterado.
    - Um segundo parágrafo explicando o **motivo** pelo qual a mudança foi realizada daquela maneira (decisões técnicas, trade-offs, resolução de problemas).
 3. **Solicite a aprovação do usuário**: "Criei uma sugestão de descrição para o seu PR em `pr_suggestion.md`. Você aceita esta sugestão para que eu crie a Pull Request automaticamente?"
+
+> [!IMPORTANT]
+> **HARD GATE (PARADA OBRIGATÓRIA)**
+> O agente **DEVE PARAR A EXECUÇÃO E AGUARDAR A RESPOSTA** do usuário aqui. Não execute o comando de criação do PR (Passo 4 da automação) sem a resposta positiva explícita do usuário.
+
 4. **Criação Automática**: Se o usuário aceitar, o agente **DEVE** executar o comando para abrir o PR utilizando a ferramenta de linha de comando (ex: GitHub CLI). Exemplo:
    `gh pr create --title "<titulo_do_pr>" --body-file pr_suggestion.md`
    *(Apenas se o comando falhar, o agente deve instruir o usuário a copiar manualmente para o link).*
@@ -76,6 +81,10 @@ Em vez de apenas fornecer o link de criação de PR vazio, o agente deve propor 
 ## 4. Retorno para a Branch Principal e Cleanup de Branches
 
 Após a conclusão e envio do push para o remoto, o agente **não deve** apenas recomendar os comandos de git checkout/pull/delete no relatório final. Em vez disso, ele deve perguntar ativamente ao usuário se deseja que o agente execute a limpeza automaticamente.
+
+> [!IMPORTANT]
+> **HARD GATE (PARADA OBRIGATÓRIA)**
+> O agente **DEVE PARAR A EXECUÇÃO E AGUARDAR A RESPOSTA** após fazer esta pergunta. O Passo 5 (Relatório de Entrega) **NUNCA** deve ser emitido na mesma resposta que contém a pergunta do Passo 4. Espere o usuário decidir sobre a limpeza antes de encerrar o fluxo.
 
 ### Fluxo de Ação:
 1. **Pergunte ao usuário**: "Deseja que eu execute a limpeza local automática (voltar para a branch main, fazer pull e excluir a branch local <nome-da-branch>)?"
