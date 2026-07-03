@@ -51,7 +51,8 @@ Ao expor uma API ou aplicação Web, é antipadrão expor diretamente o processo
 - **Regra:** Separe o servidor web (proxy reverso/assets) do processo da aplicação.
 - Use um container Nginx na frente para servir arquivos estáticos, lidar com SSL/TLS e fazer proxy para a aplicação.
 
-### Exemplo: Nginx + Go (ou PHP-FPM)
+### Exemplo: Nginx + Go, PHP-FPM ou Laravel Octane
+
 No `docker-compose.yml`:
 ```yaml
 services:
@@ -69,7 +70,7 @@ services:
   api:
     build: .
     expose:
-      - "8080" # Não exposto para o host, apenas para o Nginx
+      - "8000" # Exemplo: Porta do Laravel Octane (Swoole/RoadRunner) ou Go
     networks:
       - my_network
 
@@ -78,18 +79,21 @@ networks:
     driver: bridge
 ```
 
-Arquivo `nginx.conf` de exemplo para Proxy Reverso:
+Arquivo `nginx.conf` de exemplo para Proxy Reverso (ideal para **Laravel Octane**):
 ```nginx
 server {
     listen 80;
     server_name localhost;
 
     location / {
-        proxy_pass http://api:8080;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass http://api:8000;
+        proxy_set_header Host $http_host;
+        proxy_set_header Scheme $scheme;
+        proxy_set_header SERVER_PORT $server_port;
+        proxy_set_header REMOTE_ADDR $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
     }
 }
 ```
@@ -104,4 +108,4 @@ server {
 - [ ] O arquivo `.dockerignore` foi criado?
 - [ ] Os containers se comunicam via nome do serviço na rede interna (e não por IP/localhost)?
 - [ ] O `depends_on` garante que o banco de dados está realmente pronto (via healthcheck)?
-- [ ] Há um Nginx ou proxy reverso na frente da aplicação servindo como Gateway?
+- [ ] Há um Nginx ou proxy reverso na frente da aplicação servindo como Gateway (especialmente para Octane/Go)?

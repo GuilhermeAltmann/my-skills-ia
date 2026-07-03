@@ -57,6 +57,7 @@ my-skills/
 | `js-ts-dependency-injection` | Criar classes com dependências, configurar container, escrever mocks | DI manual, Factories, TSyringe, InversifyJS, testes unitários |
 | `go-architecture-patterns` | Estruturar projeto Go, criar repositórios, configurar structs | Hexagonal, Repository SQL, DI manual/Wire, Functional Options |
 | `php-architecture-patterns` | Revisar PSRs, estruturar projeto PHP, aplicar SOLID e clean code | PSRs 1/3/4/7/12/14/15, SOLID, Repository, Value Objects, Enums |
+| `laravel-best-practices` | Desenvolver no "Laravel Way", usar nativos, otimizar ORM | Eager Loading, Caches, Queue Jobs, API Resources, Laravel Octane |
 
 #### Frontend (`architecture/frontend/`)
 | Skill | Gatilho | Descrição resumida |
@@ -123,6 +124,7 @@ ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-clean-architectu
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-dependency-injection ~/.gemini/config/skills/js-ts-dependency-injection
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/go-architecture-patterns   ~/.gemini/config/skills/go-architecture-patterns
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/php-architecture-patterns  ~/.gemini/config/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/laravel-best-practices     ~/.gemini/config/skills/laravel-best-practices
 ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-frontend-architecture ~/.gemini/config/skills/js-ts-frontend-architecture
 ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-state-management    ~/.gemini/config/skills/js-ts-state-management
 
@@ -157,6 +159,7 @@ ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-clean-architectu
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/js-ts-dependency-injection ~/.gemini/skills/js-ts-dependency-injection
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/go-architecture-patterns   ~/.gemini/skills/go-architecture-patterns
 ln -sfn ~/Documents/my-skills/skills/architecture/backend/php-architecture-patterns  ~/.gemini/skills/php-architecture-patterns
+ln -sfn ~/Documents/my-skills/skills/architecture/backend/laravel-best-practices     ~/.gemini/skills/laravel-best-practices
 ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-frontend-architecture ~/.gemini/skills/js-ts-frontend-architecture
 ln -sfn ~/Documents/my-skills/skills/architecture/frontend/js-ts-state-management    ~/.gemini/skills/js-ts-state-management
 
