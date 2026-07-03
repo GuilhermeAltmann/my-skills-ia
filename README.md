@@ -28,21 +28,40 @@ my-skills/
 
 ## Skills disponíveis
 
-| Skill                        | Gatilho                                                              | Descrição resumida                                              |
-| ---------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------- |
-| `git-conventions`            | Criar commit, nomear branch, revisar convenções Git                  | Conventional Commits + GitFlow                                  |
-| `code-review`                | Revisar PR, diff ou arquivo; avaliar qualidade de código             | Revisão por severidade: BLOCKER, MAJOR, MINOR, NIT              |
-| `pr-documentation`           | Abrir PR, escrever descrição, validar template de PR                 | Template completo com checklist, tipo, evidências e como testar |
-| `semantic-versioning`        | Criar release, definir versão, atualizar CHANGELOG                   | SemVer 2.0.0 com CHANGELOG, tags Git e manifests                |
-| `js-ts-clean-architecture`   | Estruturar projeto, decidir onde uma classe vive, revisar camadas    | Domain / Application / Infrastructure / Presentation + regras  |
-| `js-ts-dependency-injection` | Criar classes com dependências, configurar container, escrever mocks | DI manual, Factories, TSyringe, InversifyJS, testes unitários   |
-| `go-architecture-patterns`   | Estruturar projeto Go, criar repositórios, configurar structs        | Hexagonal, Repository SQL, DI manual/Wire, Functional Options   |
-| `php-architecture-patterns`  | Revisar PSRs, estruturar projeto PHP, aplicar SOLID e clean code     | PSRs 1/3/4/7/12/14/15, SOLID, Repository, Value Objects, Enums  |
-| `endpoint-test-automation`   | Criar, validar ou estruturar testes de endpoint (integração/e2e)     | Métodos, URL base, Request JSON, status/response esperado       |
-| `brainstorming`              | Antes de iniciar qualquer trabalho criativo ou mudança de lógica     | Exploração de escopo, perguntas clarificadoras, propor 2-3 designs|
-| `writing-plans`              | Ter requisitos/specs definidos de uma tarefa de múltiplos passos     | Planos de implementação estruturados em micro-tarefas (TDD/commits)|
-| `token-reduction`            | Ao trabalhar com arquivos muito grandes ou logs extensos de terminal | Diretrizes para ler trechos específicos, evitar rewrites e filtrar logs|
-| `task-finalization`          | Após realizar commits finais, push e solicitar abertura de PR       | Elaboração de walkthrough, limpeza de workspace e relatório de entrega|
+### 📁 Git & DevOps (`git-devops/`)
+
+| Skill | Gatilho | Descrição resumida |
+| :--- | :--- | :--- |
+| `git-conventions` | Criar commit, nomear branch, revisar convenções Git | Conventional Commits + GitFlow |
+| `pr-documentation` | Abrir PR, escrever descrição, validar template de PR | Template completo com checklist, tipo, evidências e como testar |
+| `semantic-versioning` | Criar release, definir versão, atualizar CHANGELOG | SemVer 2.0.0 com CHANGELOG, tags Git e manifests |
+
+### 📁 Arquitetura & Design (`architecture/`)
+
+| Skill | Gatilho | Descrição resumida |
+| :--- | :--- | :--- |
+| `js-ts-clean-architecture` | Estruturar projeto, decidir onde uma classe vive, revisar camadas | Domain / Application / Infrastructure / Presentation + regras |
+| `js-ts-dependency-injection` | Criar classes com dependências, configurar container, escrever mocks | DI manual, Factories, TSyringe, InversifyJS, testes unitários |
+| `go-architecture-patterns` | Estruturar projeto Go, criar repositórios, configurar structs | Hexagonal, Repository SQL, DI manual/Wire, Functional Options |
+| `php-architecture-patterns` | Revisar PSRs, estruturar projeto PHP, aplicar SOLID e clean code | PSRs 1/3/4/7/12/14/15, SOLID, Repository, Value Objects, Enums |
+
+### 📁 Qualidade & Testes (`testing/`)
+
+| Skill | Gatilho | Descrição resumida |
+| :--- | :--- | :--- |
+| `code-review` | Revisar PR, diff ou arquivo; avaliar qualidade de código | Revisão por severidade: BLOCKER, MAJOR, MINOR, NIT |
+| `endpoint-test-automation` | Criar, validar ou estruturar testes de endpoint (integração/e2e) | Métodos, URL base, Request JSON, status/response esperado e script independente |
+
+### 📁 Fluxos & Otimizações do Agente (`agent-workflows/`)
+
+| Skill | Gatilho | Descrição resumida |
+| :--- | :--- | :--- |
+| `brainstorming` | Antes de iniciar qualquer trabalho criativo ou mudança de lógica | Exploração de escopo, perguntas clarificadoras, propor 2-3 designs |
+| `writing-plans` | Ter requisitos/specs definidos de uma tarefa de múltiplos passos | Planos de implementação estruturados em micro-tarefas (TDD/commits) |
+| `token-reduction` | Ao trabalhar com arquivos muito grandes ou logs extensos de terminal | Diretrizes para ler trechos específicos, evitar rewrites e filtrar logs |
+| `task-finalization` | Após realizar commits finais, push e solicitar abertura de PR | Elaboração de walkthrough, limpeza de workspace, pull e cleanup de branch |
+
+---
 
 ## Como usar
 
