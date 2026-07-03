@@ -56,21 +56,17 @@ Antes de encerrar o turno, o agente deve garantir que não deixou "lixo" no work
 
 ## 3. Retorno para a Branch Principal e Cleanup de Branches
 
-Após o envio da branch remota e solicitação da PR, o agente deve voltar à branch principal e atualizar o repositório local para garantir que seu workspace esteja limpo e pronto para a próxima tarefa:
+Após a conclusão e envio do push para o remoto, o agente **não deve** apenas recomendar os comandos de git checkout/pull/delete no relatório final. Em vez disso, ele deve perguntar ativamente ao usuário se deseja que o agente execute a limpeza automaticamente.
 
-1. **Retornar à branch principal** (`main` ou `develop`):
+### Fluxo de Ação:
+1. **Pergunte ao usuário**: "Deseja que eu execute a limpeza local automática (voltar para a branch main, fazer pull e excluir a branch local <nome-da-branch>)?"
+2. **Se o usuário aceitar**: Execute os seguintes comandos em sequência:
    ```bash
    git checkout main
-   ```
-2. **Atualizar a branch principal** com o servidor remoto:
-   ```bash
    git pull origin main
-   ```
-3. **Excluir a branch temporária local** que acabou de ser enviada (para evitar acúmulo de branches locais órfãs):
-   ```bash
    git branch -D <nome-da-branch-local>
    ```
-   *(Nota: Use `-D` maiúsculo se a branch ainda não foi integrada remotamente, mas o push já foi realizado com sucesso).*
+3. **Se o usuário recusar**: Deixe as branches intactas e continue de onde parou.
 
 ---
 
@@ -90,8 +86,7 @@ A branch com as implementações foi enviada com sucesso para o repositório rem
 * **Artefato Walkthrough**: [walkthrough.md](file:///caminho/para/o/walkthrough.md)
 
 ### Estado do Repositório Local:
-* **Branch Atual**: `main` (atualizada via `git pull`)
-* **Branch Local Excluída**: `[nome-da-branch]`
+* **Limpeza Automática**: [Executada com sucesso (branch local removida e main atualizada) / Mantida a pedido do usuário]
 
 ### Ações Pendentes / Próximos Passos:
 1. Abra o link abaixo para criar ou visualizar a Pull Request no GitHub:
@@ -108,8 +103,7 @@ A branch com as implementações foi enviada com sucesso para o repositório rem
 - [ ] Removi todos os logs de debug (`console.log`, `var_dump`, etc.) do código de produção?
 - [ ] Excluí arquivos de testes temporários e scratch scripts locais?
 - [ ] Confirmei que a branch remota está atualizada com o último commit local?
-- [ ] Voltei para a branch `main` e executei `git pull`?
-- [ ] Excluí a branch temporária localmente (`git branch -D`)?
+- [ ] Perguntei ao usuário se ele deseja a execução da limpeza da branch automática?
+- [ ] Voltei para a branch `main`, realizei o `git pull` e apaguei a branch local temporária (se aprovado pelo usuário)?
 - [ ] Forneci o link direto do GitHub/GitLab para abertura/visualização da PR?
 - [ ] Respondi de forma concisa e direta, sem redundâncias textuais?
-
