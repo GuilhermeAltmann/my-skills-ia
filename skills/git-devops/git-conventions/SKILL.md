@@ -216,6 +216,7 @@ feature/autenticacao-usuario
 4. Escreva o subject no imperativo, em minúsculas, sem ponto final.
 5. Adicione body/footer se a mudança for complexa ou quebrar compatibilidade.
 6. Valide contra as regras antes de confirmar.
+7. **Verificação com o Usuário**: Antes de executar o commit, apresente um resumo das alterações ao usuário e pergunte explicitamente se as modificações estão corretas. Somente realize o commit e o push após obter uma confirmação positiva do usuário.
 
 ### Ao criar uma branch
 
